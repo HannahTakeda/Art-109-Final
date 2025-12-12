@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Fish Tank Decorator</title>
+    <title>collage project</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@400;700&display=swap');
         
@@ -9,53 +9,66 @@
             background-color: #87CEEB;
             font-family: 'Sour Gummy', cursive;
             padding: 15px;
-            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><circle cx="12" cy="12" r="10" fill="%23b3e0ff" stroke="%230066cc" stroke-width="2"/></svg>') 12 12, auto;
         }
         
         h1 {
-            color: #333;
-            text-align: center;
-            font-size: 32px;
+            color: #0066cc;
+            font-size: 36px;
         }
         
         p {
-            color: #666;
-            font-size: 14px;
+            font-size: 18px;
         }
         
         #picker {
             background: white;
-            padding: 20px;
-            border: 2px solid #999;
-            margin-bottom: 25px;
+            padding: 18px;
+            border: 4px solid #0066cc;
+            margin-bottom: 18px;
+        }
+        
+        #picker img {
+            width: 100px;
+            height: 100px;
+            margin: 12px;
+            cursor: pointer;
+            border: 3px solid #4da6ff;
         }
         
         #workspace {
-            width: 750px;
-            height: 550px;
-            background-color: white;
-            border: 2px solid #999;
+            width: 720px;
+            height: 480px;
+            background-color: #ADD8E6;
+            border: 5px solid #1E90FF;
             position: relative;
+        }
+        
+        .img {
+            position: absolute;
+            cursor: move;
+            width: 110px;
+        }
+        
+        button {
+            background-color: #FF69B4;
+            color: white;
+            padding: 12px;
+            margin-top: 12px;
+            border: 2px solid #FF1493;
+            cursor: pointer;
+            font-size: 15px;
         }
     </style>
 </head>
 <body>
-    <h1>collage maker </h1>
-    <p>→ Image Selections←</p>
-
+    <h1>My Fish Tank Decorator</h1>
+    <p>click the images to add them to your tank!</p>
     
     <div id="picker">
-        <p style="color: #000000; font-size: 12px;">[ IMAGE LIBRARY ]</p>
+        <img src="coral1.jpg" data-img="coral1.jpg">
+        <img src="fish1.jpg" data-img="fish1.jpg">
+        <img src="fish2.jpg" data-img="fish2.jpg">
+        <img src="fish3.jpg" data-img="fish3.jpg">
+        <img src="turtle.jpg" data-img="turtle.jpg">
+        <img src="seaweed.jpg" data-img="seaweed.jpg">
     </div>
-    <div id="picker">
-        <img src="https://via.placeholder.com/100/FF6B6B/FFFFFF?text=Star" data-img="https://via.placeholder.com/100/FF6B6B/FFFFFF?text=Star">
-        <img src="https://via.placeholder.com/100/4ECDC4/FFFFFF?text=Heart" data-img="https://via.placeholder.com/100/4ECDC4/FFFFFF?text=Heart">
-        <img src="https://via.placeholder.com/100/45B7D1/FFFFFF?text=Circle" data-img="https://via.placeholder.com/100/45B7D1/FFFFFF?text=Circle">
-        <img src="https://via.placeholder.com/100/FFA07A/FFFFFF?text=Moon" data-img="https://via.placeholder.com/100/FFA07A/FFFFFF?text=Moon">
-    </div>
-    
-    <script>
-
-    </script>
-</body>
-</html>
