@@ -73,12 +73,12 @@
     <p>click the images to add them to your tank!</p>
     
     <div id="picker">
-        <img src="images/coral1.jpg" data-img="images/coral1.jpg">
-        <img src="images/fish1.jpg" data-img="images/fish1.jpg">
-        <img src="images/fish2.jpg" data-img="images/fish2.jpg">
-        <img src="images/fish3.jpg" data-img="images/fish3.jpg">
-        <img src="images/turtle.jpg" data-img="images/turtle.jpg">
-        <img src="images/seaweed.jpg" data-img="images/seaweed.jpg">
+        <img src="coral1.png" data-img="coral1.png">
+        <img src="fish1.png" data-img="fish1.png">
+        <img src="fish2.png" data-img="fish2.png">
+        <img src="fish3.png" data-img="fish3.png">
+        <img src="turtle.png" data-img="turtle.png">
+        <img src="seaweed.png" data-img="seaweed.png">
     </div>
     
     <div id="workspace"></div>
@@ -90,31 +90,24 @@
         var elem = null;
         var x = 0;
         var y = 0;
-        
         var work = document.getElementById('workspace');
         var pics = document.querySelectorAll('#picker img');
         
         for(var i = 0; i < pics.length; i++) {
             pics[i].onclick = function() {
-                add(this.getAttribute('data-img'));
-            }
-        }
-        
-        function add(src) {
-            var i = document.createElement('img');
-            i.src = src;
-            i.className = 'img';
-            
-            i.style.left = Math.random() * 500 + 'px';
-            i.style.top = Math.random() * 300 + 'px';
-            
-            work.appendChild(i);
-            
-            i.onmousedown = function(e) {
-                drag = true;
-                elem = this;
-                x = e.clientX - this.offsetLeft;
-                y = e.clientY - this.offsetTop;
+                var img = document.createElement('img');
+                img.src = this.getAttribute('data-img');
+                img.className = 'img';
+                img.style.left = Math.random() * 500 + 'px';
+                img.style.top = Math.random() * 300 + 'px';
+                work.appendChild(img);
+                
+                img.onmousedown = function(e) {
+                    drag = true;
+                    elem = this;
+                    x = e.clientX - this.offsetLeft;
+                    y = e.clientY - this.offsetTop;
+                }
             }
         }
         
