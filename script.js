@@ -34,3 +34,15 @@ document.onmouseup = function() {
     drag = false;
     elem = null;
 }
+
+document.onmousemove = function(e) {
+    if(drag && elem) {
+        elem.style.left = e.clientX - x + 'px';
+        elem.style.top = e.clientY - y + 'px';
+    }
+}
+
+document.onmouseup = function() {
+    drag = false;
+    elem = null;
+}
