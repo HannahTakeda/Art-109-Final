@@ -72,10 +72,55 @@
         <img src="images/turtle.jpg" data-img="images/turtle.jpg">
         <img src="images/seaweed.jpg" data-img="images/seaweed.jpg">
     </div>
-        <div id="workspace"></div>
+    
+    <div id="workspace"></div>
     
     <button onclick="alert('saved!')">save</button>
     
-
+    <script>
+        var drag = false;
+        var elem = null;
+        var x = 0;
+        var y = 0;
+        
+        var work = document.getElementById('workspace');
+        var pics = document.querySelectorAll('#picker img');
+        
+        for(var i = 0; i < pics.length; i++) {
+            pics[i].onclick = function() {
+                add(this.getAttribute('data-img'));
+            }
+        }
+        
+        function add(src) {
+            var i = document.createElement('img');
+            i.src = src;
+            i.className = 'img';
+            
+            i.style.left = Math.random() * 500 + 'px';
+            i.style.top = Math.random() * 300 + 'px';
+            
+            work.appendChild(i);
+            
+            i.onmousedown = function(e) {
+                drag = true;
+                elem = this;
+                x = e.clientX - this.offsetLeft;
+                y = e.clientY - this.offsetTop;
+            }
+        }
+        
+        document.onmousemove = function(e) {
+            if(drag && elem) {
+                elem.style.left = e.clientX - x + 'px';
+                elem.style.top = e.clientY - y + 'px';
+            }
+        }
+        
+        document.onmouseup = function() {
+            drag = false;
+            elem = null;
+        }
+    </script>
 </body>
 </html>
