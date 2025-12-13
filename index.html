@@ -2,71 +2,7 @@
 <html>
 <head>
     <title>collage project</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@400;700&display=swap');
-        
-        body {
-            background-color: #87CEEB;
-            font-family: 'Sour Gummy', cursive;
-            padding: 15px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        h1 {
-            color: #0066cc;
-            font-size: 36px;
-        }
-        
-        p {
-            font-size: 18px;
-        }
-        
-        #picker {
-            background: white;
-            padding: 18px;
-            border: 4px solid #0066cc;
-            margin-bottom: 18px;
-            width: 100%;
-            max-width: 950px;
-            box-sizing: border-box;
-        }
-        
-        #picker img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            margin: 12px;
-            cursor: pointer;
-            border: 3px solid #4da6ff;
-        }
-        
-        #workspace {
-            width: 100%;
-            max-width: 950px;
-            height: 600px;
-            background-color: #ADD8E6;
-            border: 5px solid #1E90FF;
-            position: relative;
-            box-sizing: border-box;
-        }
-        
-        .img {
-            position: absolute;
-            cursor: move;
-            width: 110px;
-        }
-        
-        button {
-            background-color: #FF69B4;
-            color: white;
-            padding: 12px;
-            margin-top: 12px;
-            border: 2px solid #FF1493;
-            cursor: pointer;
-            font-size: 15px;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>My Fish Tank Decorator</h1>
@@ -85,43 +21,6 @@
     
     <button onclick="alert('saved!')">save</button>
     
-    <script>
-        var drag = false;
-        var elem = null;
-        var x = 0;
-        var y = 0;
-        var work = document.getElementById('workspace');
-        var pics = document.querySelectorAll('#picker img');
-        
-        for(var i = 0; i < pics.length; i++) {
-            pics[i].onclick = function() {
-                var img = document.createElement('img');
-                img.src = this.getAttribute('data-img');
-                img.className = 'img';
-                img.style.left = Math.random() * 500 + 'px';
-                img.style.top = Math.random() * 300 + 'px';
-                work.appendChild(img);
-                
-                img.onmousedown = function(e) {
-                    drag = true;
-                    elem = this;
-                    x = e.clientX - this.offsetLeft;
-                    y = e.clientY - this.offsetTop;
-                }
-            }
-        }
-        
-        document.onmousemove = function(e) {
-            if(drag && elem) {
-                elem.style.left = e.clientX - x + 'px';
-                elem.style.top = e.clientY - y + 'px';
-            }
-        }
-        
-        document.onmouseup = function() {
-            drag = false;
-            elem = null;
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>

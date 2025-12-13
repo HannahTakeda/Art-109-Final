@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Sour+Gummy:wght@400;700&display=swap');
+
+body {
+    background-color: #87CEEB;
+    font-family: 'Sour Gummy', cursive;
+    padding: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    color: #0066cc;
+    font-size: 36px;
+}
+
+p {
+    font-size: 18px;
+}
+
+#picker {
+    background: white;
+    padding: 18px;
+    border: 4px solid #0066cc;
+    margin-bottom: 18px;
+    width: 100%;
+    max-width: 950px;
+    box-sizing: border-box;
+}
+
+#picker img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin: 12px;
+    cursor: pointer;
+    border: 3px solid #4da6ff;
+}
+
+#workspace {
+    width: 100%;
+    max-width: 950px;
+    height: 600px;
+    background-color: #ADD8E6;
+    border: 5px solid #1E90FF;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.img {
+    position: absolute;
+    cursor: move;
+    width: 110px;
+}
+
+button {
+    background-color: #FF69B4;
+    color: white;
+    padding: 12px;
+    margin-top: 12px;
+    border: 2px solid #FF1493;
+    cursor: pointer;
+    font-size: 15px;
+}
